@@ -1,0 +1,13 @@
+pipeline:
+  validate:
+    image: hashicorp/packer:1.3.4
+    secrets: [aws_access_key_id, aws_secret_access_key]
+    commands:
+      - packer validate aws/ubuntu.json
+  packer_build:
+    image: hashicorp/packer:1.3.4
+    secrets: [aws_access_key_id, aws_secret_access_key]
+    commands:
+      - packer build aws/ubuntu.json
+    when:
+      event: [ tag ]

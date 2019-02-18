@@ -3,7 +3,6 @@
 This packer based repositories produce ubuntu based amis containing 
 
 * salt-minion
-* salt-api
 
 packages
 
